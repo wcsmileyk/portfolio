@@ -103,14 +103,14 @@ nav a:hover {
     border-radius: 5px 5px 0px 0px;
 }
 
-.footer a {
+.footer #foot_left {
     color: white;
     text-decoration: none;
     margin: 0;
     display: inline;
 }
 
-.footer p {
+.footer #foot_right {
     margin: 0;
     display: inline;
     position: relative;
