@@ -97,8 +97,8 @@ nav a:hover {
     margin: -3em 0em 0em 0em;
     background-color: #2C91BF;
     color: white;
-    padding: 1rem;
     position: relative;
+    bottom: 0px;
     clear: both;
     border-radius: 5px 5px 0px 0px;
 }
@@ -114,6 +114,8 @@ nav a:hover {
     margin: 0;
     display: inline;
     position: relative;
+    padding: 5px 5px 5px 5px;
+    right: 5px;
     left: 5px;
     float: right;
 }

@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" />
+    <title>
+        About Wes
+    </title>
+    <link type="text/css" rel="stylesheet" href="static/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Muli|Slabo+27px|Space+Mono" rel="stylesheet">
 </head>
 <body>
@@ -18,18 +20,12 @@
 
         </nav>
     </header>
-    <div class="main">
-        {% block body %}
-        <div class="projects">
-            <ul>
-                {% block projects %}
-                {% endblock %}
-            </ul>
+        <div class="main">
+            <p class="main-text">I'm a curious person that really enjoys building new things. From woodworking projects to new programming applications, I like to see my handy work come to life.
+                As this page grows I'll start including more information about myself that is productive to the point of the site.</p>
         </div>
-        {% endblock %}
-    </div>
     <footer class="footer">
-        <p id="foot_right">&copy; Copyright Blah Blah</p>
+        <p id="foot_right">&copy; Copyright Wes Smiley</p>
     </footer>
 </body>
 </html>
