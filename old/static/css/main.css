@@ -1,0 +1,121 @@
+/*header*/
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    height: 100%;
+    min-height: 100%;
+}
+
+header {
+    margin: 0;
+    background: #1D607F;
+    color: white;
+    padding: 5px 10px 0px 10px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+nav h1 {
+    margin: 0;
+    display: inline;
+}
+
+nav ul {
+    margin: 0;
+    display: inline;
+    position: relative;
+    left: 5px;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #34ADE5;
+}
+
+/*body*/
+
+.main {
+    margin: 0;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
+    min-width: 100%;
+    z-index: -1;
+    overflow: auto;
+}
+
+.projects li {
+    display: inline-block;
+    margin: 20px 20px 20px 20px;
+    float: left;
+    clear: left;
+}
+
+.projects a {
+    color: white;
+    margin: 50px 100px;
+    padding: 25px;
+    background-color: rgba(15,48,64,.3);
+    border: 2px solid black;
+    border-radius: 10px;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+}
+
+.main-text {
+    color: white;
+    margin: 50px 100px;
+    padding: 25px;
+    background-color: rgba(15,48,64,.3);
+    border: 2px solid black;
+    border-radius: 10px;
+    float: left;
+    text-align: left;
+}
+
+.projects a:hover {
+    background-color: #3AC1FF;
+}
+
+.footer {
+    margin: -3em 0em 0em 0em;
+    background-color: #2C91BF;
+    color: white;
+    position: relative;
+    bottom: 0px;
+    clear: both;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.footer #foot_left {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    display: inline;
+}
+
+.footer #foot_right {
+    margin: 0;
+    display: inline;
+    position: relative;
+    padding: 5px 5px 5px 5px;
+    right: 5px;
+    left: 5px;
+    float: right;
+}
