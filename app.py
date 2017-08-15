@@ -18,6 +18,7 @@ app.config['MAIL_DEFAULT_SENDER'] = 'admin@wsmiley.com'
 
 mail = Mail(app)
 
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -37,7 +38,7 @@ def index():
         else:
             flash('All fields are required')
 
-        return render_template('index.html#contact', form=form)
+        return redirect(url_for('index', _anchor='contact'))
 
     return render_template('index.html', form=form)
 
