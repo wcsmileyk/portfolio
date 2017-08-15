@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_mail import Mail, Message
 
 from forms import ContactForm
@@ -22,16 +22,23 @@ mail = Mail(app)
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     form = ContactForm()
-    if form.validate_on_submit():
-        msg = Message('New Freelance Contact')
-        msg.recipients = ['wesley.c.smiley@gmail.com']
-        contact_name = form.name.data
-        contact_email = form.email.data
-        contact_message = form.message.data
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            msg = Message('New Freelance Contact')
+            msg.recipients = ['wesley.c.smiley@gmail.com']
+            contact_name = form.name.data
+            contact_email = form.email.data
+            contact_message = form.message.data
 
-        msg.body = f'Name: {contact_name} \n Email: {contact_email} \n Message: \n {contact_message}'
-        mail.send(msg)
-        return request('index.html#contact')
+            msg.body = f'Name: {contact_name} \n Email: {contact_email} \n Message: \n {contact_message}'
+            mail.send(msg)
+            flash('Thank you for your message')
+
+        else:
+            flash('All fields are required')
+
+        return render_template('index.html#contact', form=form)
+
     return render_template('index.html', form=form)
 
 if __name__ == '__main__':
