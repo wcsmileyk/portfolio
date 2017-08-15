@@ -22,11 +22,16 @@ mail = Mail(app)
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     form = ContactForm()
-    if request.method == 'POST':
-        msg = Message('Testing')
+    if form.validate_on_submit():
+        msg = Message('New Freelance Contact')
         msg.recipients = ['wesley.c.smiley@gmail.com']
-        msg.body = 'Testing 123'
+        contact_name = form.name.data
+        contact_email = form.email.data
+        contact_message = form.message.data
+
+        msg.body = f'Name: {contact_name} \n Email: {contact_email} \n Message: \n {contact_message}'
         mail.send(msg)
+        return request('index.html#contact')
     return render_template('index.html', form=form)
 
 if __name__ == '__main__':
