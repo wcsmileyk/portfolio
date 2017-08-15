@@ -33,10 +33,10 @@ def index():
 
             msg.body = f'Name: {contact_name} \n Email: {contact_email} \n Message: \n {contact_message}'
             mail.send(msg)
-            flash('Thank you for your message')
+            flash('Thank you for your message', 'info')
 
         else:
-            flash('All fields are required')
+            flash('All fields are required', 'error')
 
         return redirect(url_for('index', _anchor='contact'))
 

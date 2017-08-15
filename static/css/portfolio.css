@@ -121,3 +121,7 @@ hr {
 .carousel {
     border-radius: 5px;
 }
+
+form ul {
+    padding-top: 20px;
+}

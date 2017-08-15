@@ -114,6 +114,7 @@
 
                     <div class="page" id="contact">
                         <form action="" method="post" class="col-xs-8 col-md-6 col-md-offset-2 col-xs-offset-1">
+                            {{ form.csrf_token }}
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" aria-label="Name">
                             </div>
@@ -124,18 +125,23 @@
                                 <textarea name="message" id="message" class="form-control" rows="10" placeholder="How can I help?"></textarea>
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                        <div>
-                            {% with messages = get_flashed_messages() %}
+
+                            {% with messages = get_flashed_messages(with_categories=true) %}
                                 {% if messages %}
-                                    <ul class=flashes>
-                                        {% for message in messages %}
-                                            <li>{{ message }}</li>
-                                        {% endfor %}
-                                    </ul>
+                                    <div>
+                                        <ul class="list-unstyled">
+                                            {% for category, message in messages %}
+                                                {% if category == 'error' %}
+                                                    <li class="alert-danger">{{ message }}</li>
+                                                {% else %}
+                                                    <li class="well">{{ message }}</li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
                                 {% endif %}
                             {% endwith %}
-                        </div>
+                        </form>
                     </div>
 
                 </div>
